@@ -17,6 +17,7 @@
         }
         #center {
           text-align:center;
+          margin:0;
         }
         #paddings {
           margin:0;
@@ -30,19 +31,54 @@
           margin:auto;
           top:0;
         }
+        #message {
+          position:absolute;
+          left:-100000;
+          white-space:nowrap;
+        }
     </style>
   </head>
   <body>
     <div id="maincontent"><font size="25%" id="paddings">Gorilla Tag Wiki in japanese</font>
       <br>
       <h1 id="paddings">
-      日本人向けゴリラタグウィキ<img src="blue.png" width="25%" id="blue">
+      日本人向けゴリラタグウィキ<img src="blue.png" width="25%" id="blue"><span id="message">くわぁ！！</span>
       </h1>
       <span id="string">
       <br>
       <br>
       <span id="center">！注意！&emsp;このウィキは正しくない情報がある可能性があります</span>
+      <br>
+      <br>
+      <h1>紹介物一覧</h1>
+      <br>
+      <img src="map.png" width="25%" id="map">&emsp;
+      <br>
+      &emsp;マップ
+      <br>
+      <h1>おすすめ！ビデオでアップデート解説！</h1>
+      <br>
+      詳しくはこちらを<a href="https://youtube.com/@yamasitarou">タップまたはクリック！</a>
       </span>
     </div>
+    <!--ここからjavascript-->
+    <script>
+      //山下太郎
+      var blue = document.getElementById("blue");
+      //青いゴリラをクリックしたら
+      blue.addEventListener("click",blueclick);
+      //遊び要素
+      function blueclick () {
+        //メッセージの位置同期
+        document.getElementById("message").style.left = document.getElementById("blue").getBoundingClientRect().left - 300;
+      }
+      //マップ
+      var maps = document.getElementById("map");
+      //マップをクリックしたら
+      maps.addEventListener("click",openmap);
+      function openmap () {
+        window.location.href = "map.html";
+      }
+    </script>
   </body>
 </html>
