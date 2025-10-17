@@ -35,6 +35,9 @@
         #forest {
           border: 4mm ridge;
         }
+	#canyon {
+	  border: 4mm ridge;
+	}
     </style>
   </head>
     <body>
@@ -65,7 +68,7 @@
                 壁ジャンプを練習するためにある木の板もあるため初心者にもやさしいところです
                 </p>
                 <br>
-                <h1><p id=キャニオン>キャニオン CANYON</h1>
+		<h1><p id=キャニオン>キャニオン CANYON</h1><img src="canyon.jpeg" width="50%" id="canyon">
                 <br>
                 キャニオンという場所は砂漠みたいな見た目をしていて高低差が激しいです
                 <br>
@@ -78,6 +81,14 @@
                 そして勢いをつけてつかむと物理演算がうごいてぶらんぶらんします。
                 </p>
             </span>
-        </div>
+	</div>
+	<script>
+		//パディング
+		var padding = document.getElementById("paddings");
+		//ホームに戻る
+		padding.addEventListener("click",() => {	
+			window.location.href = "https://gorillatagwiki.f5.si";
+		});
+	</script>
     </body>
 </html>
