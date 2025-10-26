@@ -56,9 +56,9 @@
       <br>
       ヒント：アイコンをクリックしてページに移る
       <br>
-      <img src="map.png" width="25%" id="map">&emsp;
+      <img src="map.png" width="25%" id="map">&emsp;<img src=update.png width=25% id=update>
       <br>
-      &emsp;マップ
+      &emsp;マップ&emsp;アップデート
       <br>
       <h1>おすすめ！ビデオでアップデート解説！</h1>
       <br>
@@ -84,6 +84,14 @@
       maps.addEventListener("click",openmap);
       function openmap () {
         window.location.href = "map.html";
+      }
+      //update
+      var update = document.getElementById("update");
+      //アップデートをクリックしたら
+      update.addEventListener("click",openupdate);
+      //アップデートを開く
+      function openupdate() {
+	      window.location.href = "update.html";
       }
     </script>
   </body>
