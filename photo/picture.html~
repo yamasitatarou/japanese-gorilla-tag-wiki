@@ -17,12 +17,16 @@
 		body {
 		background-image:url("backgroundphone.png");
 		background-attachment:fixed;
+		background-size:cover;
+		background-repeat:no-repeat;
 		}
 	}
 	@media only screen and (min-width:981px) {
 		body {
 		background-image:url("background.png");
 		background-attachment:fixed;
+		background-size:cover;
+		background-repeat:no-repeat;
 		}
 	}
 	#main {
@@ -103,5 +107,19 @@
 			<br>
 			<br>
 			<img src=monkeke.png>&emsp;<img src=okooko.png>&emsp;<img src=midori.png>
+			<br>
+			<br>
+			<img src=minigames.jpg id=yoko>
+			<br>
+			<br>
+			<img src=sanin.jpg id=yoko>
+			<br>
+			<br>
+			<img src=ana.jpg id=yoko>
+			<br>
+			<br>
+			<img src=bean.jpg>&emsp;
+			<br>
+			<br>
 	</body>
 </html>
