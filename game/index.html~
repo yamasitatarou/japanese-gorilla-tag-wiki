@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>暇つぶし用ミニゲーム！！</title>
+<style>
+body {
+	margin:0;
+	text-align:center;
+	background-image:url("pc.png");
+	overflow:hidden;
+	font-family: "fonts";
+}
+h1 {
+	font-size:175%
+}
+h3 {
+	font-size:150%
+}
+@font-face{
+	font-family:"fonts";
+	src: url("font.ttf") format("truetype");
+}
+@media only screen and (max-width:980px) {
+	body {
+		background-image:url("mobile.png");
+		background-size:cover;
+		background-attachment:fixed;
+	}
+	h1{
+		font-size:275%;
+	}
+	h3 {
+		font-size:250%;
+	}
+}
+@media only screen and (min-width:981px) {
+	body {
+		background-image:url("pc.png");
+		background-size:cover;
+		color:white;
+	}
+}
+</style>
+	</head>
+	<body>
+		<div id=welcome><h1>ミニゲーム！！</h1>
+			<br>
+			<h3>このミニゲームでは上から落ちてくるシャイニーロックを受け止めるゲームです。</h3>
+			<br>
+			<h3>操作方法はスマホだったら移動したいところをタップ、pcならaとdキーで移動できます</h3>
+			<br>
+			<h3>移動するゴリラは画面下にいます！</h3>
+		</div>
+	</body>
+</html>
