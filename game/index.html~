@@ -31,6 +31,12 @@ h3 {
 	h3 {
 		font-size:250%;
 	}
+	#player {
+		width:25%;
+	}
+	#shinyrock {
+		width:10%;
+	}
 }
 @media only screen and (min-width:981px) {
 	body {
@@ -41,16 +47,15 @@ h3 {
 }
 #player {
 	position:absolute;
-	bottom:0;
-	z-index:50;
-	left:0;
+	bottom:0px;
+	left:-50px;
 }
 #welcome {
 	z-index:100;
 }
 #shinyrock {
 	position:absolute;
-	z-index:25;
+	z-index:-25;
 	top:0;
 	left:0;
 }
@@ -65,15 +70,57 @@ h3 {
 			<br>
 			<h3>移動するゴリラは画面下にいます！</h3>
 		</div>
+		<br>
+		<h1>スコア：<div id=score></div></h1>
 		<img src=monke.png width=10% id=player>
 		<img src=shiny.png width=5% id=shinyrock>
 		<script>
 			addEventListener("keydown",movement);
-			addEventListener("click",movement);
+			addEventListener("touchstart",movement);
 			var player = document.getElementById("player");
 			var shiny = document.getElementById("shinyrock");
-			var playerleft = player.style.left;
-			var shiny = shiny.style.left;
+			var playerleft = player.getBoundingClientRect().left;
+			var shinyleft = shiny.getBoundingClientRect().left;
+			var shinytop = shiny.getBoundingClientRect().top;
+			var welcome = document.getElementById("welcome");
+			var scores = document.getElementById("score");
+			var score = 0;
+			//score初期化
+			scores.innerHTML = `${score}`
+			//shinydrop
+			shinydrop();
+			function shinydrop () {
+				var random = Math.floor(Math.random() *91);
+				shiny.style.left = random + "%";
+				shiny.style.top = 0;
+				dropmovement();
+			}
+			//dropmovementsystem
+			function dropmovement () {
+				var bodyheight = document.body.getBoundingClientRect().height;
+				if (shiny.getBoundingClientRect().top >= bodyheight) {
+					welcome.innerHTML = `<h1>ゲームオーバー！！</h1><br><h3>このサイトを更新してまた始める！</h3>`;
+				} else {
+					shinytop +=3;
+					shiny.style.top = shinytop + "%";
+					holdingsystem();
+					setTimeout(dropmovement,500);
+				}
+			}
+			//holdingsystem
+			function holdingsystem () {
+				//playerright >= shinyright && playerleft <= shinyright
+				if(player.getBoundingClientRect().right >= shiny.getBoundingClientRect().right && player.getBoundingClientRect().left <= shiny.getBoundingClientRect().right) {
+					console.log("盾当たった");
+					//playertop <= shinybottom && playerbottom >= shinytop
+					if(player.getBoundingClientRect().top <= shiny.getBoundingClientRect().bottom && player.getBoundingClientRect().bottom >= shiny.getBoundingClientRect().bottom) {
+						shinydrop();
+						score += 1;
+						scores.innerHTML = `${score}`;
+					}
+				}
+			}
+			//playermovementsystem
 			function movement(e) {
 				if (e.key === "a") {
 					playerleft -= 50;
@@ -87,8 +134,19 @@ h3 {
 				} else if (e.key === "ArrowRight") {
 					playerleft += 50;
 					player.style.left = playerleft + "px";
+				} else if (event.changedTouches[0]) {
+					var touchX = event.changedTouches[0].pageX;
+					var gorillawidth = player.getBoundingClientRect().width;
+					var gorillaes = gorillawidth / 2;
+					var zahyou = touchX - gorillaes;
+					player.style.left = zahyou;
 				}
 			}
+			//debug
+			/*addEventListener("click",() => {
+				alert(document.body.getBoundingClientRect().height +  "と" + shiny.getBoundingClientRect().top);
+			});
+			*/
 		</script>
 	</body>
 </html>
