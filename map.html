@@ -25,11 +25,23 @@
 		#maincontent {
 			width:95% !important;
 		}
+		img:not(#blue) {
+			width:80%;
+		}
+		#phone {
+			display:initial;
+			position:fixed;
+			z-index:-10;
+			width:125% !important;
+		}
 	}
 	@media only screen and (min-width:981px) {
 		body {
 		background-image:url("background.png");
 		background-attachment:fixed;
+		}
+		#phone {
+			display:none;
 		}
 	}
         #maincontent {
@@ -66,10 +78,11 @@
     </style>
   </head>
     <body>
+	<img src=backgroundphone.png id=phone>
         <div id="maincontent"><font size="25%" id="paddings">Gorilla Tag Wiki in japanese</font>
             <br>
             <h1 id="paddings">
-                日本人向けゴリラタグウィキ<img src="blue.png" width="25%" id="blue">
+                日本人向けゴリラタグウィキ<img src="blue.png" width="25%" id="blue" style="width:25% !important;">
             </h1>
             <span id="string">
 		<br>
