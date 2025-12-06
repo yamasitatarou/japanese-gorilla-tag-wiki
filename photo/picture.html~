@@ -38,11 +38,19 @@
 		#main {
 			width:90% !important;
 		}
-		img {
+		img:not(#arrow) {
 			width:50% !important;
 		}
 		#yoko {
 			width:100% !important;
+		}
+		#arrow {
+			position:fixed;
+			right:0;
+			bottom:0;
+			width:15%;
+			margin:0;
+			z-index:10;
 		}
 	}
 	@media only screen and (min-width:981px) {
@@ -51,6 +59,14 @@
 		background-attachment:fixed;
 		background-size:cover;
 		background-repeat:no-repeat;
+		}
+		#arrow {
+			position:fixed;
+			right:0;
+			bottom:0;
+			width:5%;
+			z-index:10;
+			margin:0;
 		}
 	}
 	#main {
@@ -71,7 +87,7 @@
 	h1 {
 		font-size:300%
 	}
-	img {
+	img:not(#arrow) {
 		border:4mm ridge;
 		width:25%;
 	}
@@ -82,13 +98,17 @@
 </style>
 	</head>
 	<body>
+		<!--上に戻るボタン-->
+		<a href=#centers><img src=uparrow.png alt=上に戻るボタンのはず id=arrow></a>
 		<span id=#backgrounds></span>
 		<div id=main>
-			<h1 id=center>ライブラリサイト！</h1>
+			<a id=centers><h1 id=center>ライブラリサイト！</h1></a>
 			<br>
 			<h2>このサイトでは<a href="https://youtube.com/@yamasitarou">私たち</a>の<a href="https://line.me/ti/g2/PZ4z8IJllAui1i-14kkcB3osCarp2prA4ygqyw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">グループ</a>で遊んでいるときに取った
 				<br>
 				写真を集めたサイトです。(少し加工されている場合があります)
+				<br>
+				右下のボタンで一番上まで戻ってこれます。
 			</h2>
 			<br>
 			<hr>
@@ -173,15 +193,23 @@
 			<img src=beautifulmoon.png id=yoko>
 			<br>
 			<br>
-			<img src=cityes.png>&emsp;<img src=cutes.png>
+			<img src=cityes.png>&emsp;<img src=cutes.png>&emsp;<img src=lavamonkes.png>
 			<br>
 			<br>
-			<script>
-				var center = document.getElementById("center");
-				center.addEventListener("click",goback);
-				function goback() {
-					window.location.href = "https://gorillatagwiki.f5.si/";
-				}
-			</script>
+			<img src=goodcloud.png id=yoko>
+			<br>
+			<br>
+			<img src=purpleguys.png>&emsp;<img src=redphone.png>&emsp;<img src=bedroom.png>
+			<br>
+			<br>
+			<img src=gorillafaces.png id=yoko>
+			<br>
+			<br>
+			<img src=smallbedroom.png>&emsp;<img src=smallforest.png>&emsp;
+			<br>
+			<br>
+			<img src=redmonke.png id=yoko>
+			<br>
+			<br>
 	</body>
 </html>
