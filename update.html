@@ -31,11 +31,19 @@
 		#h1 {
 			font-size:150% !important;
 		}
+		#phone {
+			position:fixed;
+			width:125% !important;
+			z-index:-100;
+		}
 	}
 	@media only screen and (min-width:981px) {
 		body {
 		background-image:url("background.png");
 		background-attachment:fixed;
+		}
+		#phone {
+			display:none;
 		}
 	}
         #maincontent {
@@ -63,9 +71,19 @@
           margin:auto;
           top:0;
         }
+	#arrow {
+		position:fixed;
+		right:0;
+		bottom:0;
+		margin:0;
+		width:15%;
+		z-index:25;
+	}
     </style>
   </head>
     <body>
+	    <a href=#paddings><img src=uparrow.png id=arrow></a>
+	    <img src=backgroundphone.png id=phone>
         <div id="maincontent"><font size="25%" id="homepage">Gorilla Tag Wiki in japanese</font>
             <br>
             <h1 id="paddings">
@@ -73,7 +91,7 @@
             </h1>
             <span id="string">
                 <br>
-		ヒント：ホームページに戻るには上の文字をクリックする
+		ヒント：ホームページに戻るには上の文字をクリックする,右下のボタンをタップまたはクリックして上に戻る
 		<br>
 		<br>
                 <br>

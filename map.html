@@ -25,7 +25,7 @@
 		#maincontent {
 			width:95% !important;
 		}
-		img:not(#blue) {
+		img:not(#blue,#arrow) {
 			width:80%;
 		}
 		#phone {
@@ -75,9 +75,18 @@
 	#canyon, #city {
 	  border: 4mm ridge;
 	}
+	#arrow {
+		z-index:25;
+		position:fixed;
+		margin:0;
+		right:0;
+		bottom:0;
+		width:15%;
+	}
     </style>
   </head>
     <body>
+	    <a href=#paddings><img src=uparrow.png id=arrow></a>
 	<img src=backgroundphone.png id=phone>
         <div id="maincontent"><font size="25%" id="paddings">Gorilla Tag Wiki in japanese</font>
             <br>
