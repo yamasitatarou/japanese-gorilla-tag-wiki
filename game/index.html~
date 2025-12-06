@@ -62,13 +62,15 @@ h3 {
 </style>
 	</head>
 	<body>
-		<div id=welcome><h1>ミニゲーム！！</h1>
+		<div id=welcome><a href="https://gorillatagwiki.f5.si/"><h1>ミニゲーム！！</a></h1>
 			<br>
 			<h3>このミニゲームでは上から落ちてくるシャイニーロックを受け止めるゲームです。</h3>
 			<br>
 			<h3>操作方法はスマホだったら移動したいところをタップ、pcならaとdキーで移動できます</h3>
 			<br>
-			<h3>移動するゴリラは画面下にいます！</h3>
+			<h3>移動するゴリラは画面下にいます！そして上にあるミニゲームの文字をタップして</h3>
+			<br>
+			<h3>ホームページに戻れます</h3>
 		</div>
 		<br>
 		<h1>スコア：<div id=score></div></h1>
@@ -92,7 +94,8 @@ h3 {
 			function shinydrop () {
 				var random = Math.floor(Math.random() *91);
 				shiny.style.left = random + "%";
-				shiny.style.top = 0;
+				shinytop = 0;
+				shiny.style.top = shinytop;
 				dropmovement();
 			}
 			//dropmovementsystem
@@ -103,20 +106,20 @@ h3 {
 				} else {
 					shinytop +=3;
 					shiny.style.top = shinytop + "%";
+					var times = setTimeout(dropmovement,500);
 					holdingsystem();
-					setTimeout(dropmovement,500);
 				}
 			}
 			//holdingsystem
 			function holdingsystem () {
-				//playerright >= shinyright && playerleft <= shinyright
-				if(player.getBoundingClientRect().right >= shiny.getBoundingClientRect().right && player.getBoundingClientRect().left <= shiny.getBoundingClientRect().right) {
-					console.log("盾当たった");
+				//playerright >= shinyright && playerleft <= shinyright || playerright <= shinyleft && playerleft >= shinyleft
+				if(player.getBoundingClientRect().right >= shiny.getBoundingClientRect().right && player.getBoundingClientRect().left <= shiny.getBoundingClientRect().right || player.getBoundingClientRect().right <= shiny.getBoundingClientRect().left && player.getBoundingClientRect().left >= shiny.getBoundingClientRect().left) {
 					//playertop <= shinybottom && playerbottom >= shinytop
 					if(player.getBoundingClientRect().top <= shiny.getBoundingClientRect().bottom && player.getBoundingClientRect().bottom >= shiny.getBoundingClientRect().bottom) {
 						shinydrop();
 						score += 1;
 						scores.innerHTML = `${score}`;
+						clearTimeout(times);
 					}
 				}
 			}
