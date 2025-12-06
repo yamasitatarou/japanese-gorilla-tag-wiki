@@ -102,7 +102,7 @@ h3 {
 			function dropmovement () {
 				var bodyheight = document.body.getBoundingClientRect().height;
 				if (shiny.getBoundingClientRect().top >= bodyheight) {
-					welcome.innerHTML = `<h1>ゲームオーバー！！</h1><br><h3>このサイトを更新してまた始める！</h3>`;
+					welcome.innerHTML = `<h1><a href="https://gorillatagwiki.f5.si/">ゲームオーバー！！</a></h1><br><h3>このサイトを更新してまた始める！またはゲームオーバーの文字をタップ(クリック)してホームページに戻る</h3>`;
 				} else {
 					shinytop +=3;
 					shiny.style.top = shinytop + "%";
