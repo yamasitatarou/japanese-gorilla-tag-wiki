@@ -38,7 +38,7 @@
 		#main {
 			width:90% !important;
 		}
-		img:not(#arrow,#yoko) {
+		img:not(#arrow,#yoko,#phone) {
 			width:50% !important;
 		}
 		#yoko {
@@ -51,6 +51,11 @@
 			width:15%;
 			margin:0;
 			z-index:10;
+		}
+		#phone {
+			position:fixed;
+			width:125%;
+			z-index:-100;
 		}
 	}
 	@media only screen and (min-width:981px) {
@@ -71,6 +76,9 @@
 		#yoko {
 			width:75% !important;
 		}
+		#phone {
+			display:none;
+		}
 	}
 	#main {
 		width:75%;
@@ -90,7 +98,7 @@
 	h1 {
 		font-size:300%
 	}
-	img:not(#arrow) {
+	img:not(#arrow,#phone) {
 		border:4mm ridge;
 		width:25%;
 	}
@@ -102,6 +110,7 @@
 	<body>
 		<!--上に戻るボタン-->
 		<a href=#centers><img src=uparrow.png alt=上に戻るボタンのはず id=arrow></a>
+		<img src=backgroundphone.png id=phone>
 		<span id=#backgrounds></span>
 		<div id=main>
 			<a id=centers><h1 id=center>ライブラリサイト！</h1></a>
